@@ -55,7 +55,7 @@ module.exports = class extends Generator {
       this.destinationPath('app/js/main.js')
     );
     this.fs.copy(
-      this.templatePath('sass/*'),
+      this.templatePath('sass/'),
       this.destinationPath('app/sass')
     );
     this.fs.copy(
