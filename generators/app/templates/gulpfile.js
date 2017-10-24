@@ -45,12 +45,12 @@ gulp.task('build', ['clean', 'sass', 'scripts', 'csso', 'img'], function() {
 
 gulp.task('scripts', function() {
   return gulp.src([ // Берем все необходимые библиотеки
-    'app/js/jquery/dist/jquery.js', 
-    'app/js/jquery1.12/dist/jquery.js', 
-    'app/js/slick/slick.js', 
+    'app/js/jquery/dist/jquery.js',
+    'app/js/jquery1.12/dist/jquery.js',
+    'app/js/slick/slick.js',
     'app/js/main.js'
     ])
-    
+
     .pipe(concat('main.min.js')) // Собираем их в кучу в новом файле
     // .pipe(uglify()) // Сжимаем JS файл
     .on('error', notify.onError({
@@ -58,13 +58,11 @@ gulp.task('scripts', function() {
       title: "JS Error!"
     }))
     .pipe(gulp.dest('app/js')) // Выгружаем в папку app/js
-   .pipe(browserSync.reload({
-      stream: true
-    }));
+   .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('sass', function() {
-  return gulp.src('app/sass/*.sass')
+  return gulp.src('app/sass/**/*.sass')
     .pipe(sass.sync())
     .on('error', notify.onError({
       message: "<%= error.message %>",
@@ -74,9 +72,7 @@ gulp.task('sass', function() {
       cascade: true
     }))
     .pipe(gulp.dest('app/css/'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
+    .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('jade', function() {
@@ -110,5 +106,5 @@ gulp.task('default', ['browser-sync', 'scripts'], function() {
   gulp.watch('app/sass/*.sass', ['sass']); // Наблюдение за SASS файлами
   gulp.watch('app/*.jade', ['jade']); // Наблюдение за JADE файлами в корне проекта
   gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
-  gulp.watch(['app/js/*.js', '!app/js/main.min.js'], ['scripts']); // Наблюдение за JS файлами в папке js
+  gulp.watch(['app/js/**/*.js', '!app/js/main.min.js'], ['scripts']); // Наблюдение за JS файлами в папке js
 });

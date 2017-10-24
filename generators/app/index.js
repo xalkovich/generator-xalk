@@ -37,7 +37,7 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
-      this.templatePath('fonts/*'),
+      this.templatePath('fonts/'),
       this.destinationPath('app/fonts')
     );
 
