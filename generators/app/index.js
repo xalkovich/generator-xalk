@@ -80,7 +80,9 @@ module.exports = class extends Generator {
   }
 
   installingLodash() {
-    this.npmInstall(['gulp', 'browser-sync', 'gulp-sass', 'gulp-csso', 'gulp-rename', 'bower', 'gulp-jade', 'gulp-jade', 'gulp-autoprefixer','gulp-concat','gulp-uglifyjs','gulp-notify','del','gulp-imagemin','imagemin-pngquant'], {
+    this.npmInstall(['gulp', 'browser-sync', 'gulp-sass', 'gulp-csso', 'gulp-rename', 'bower', 'gulp-jade', 'gulp-jade', 'gulp-autoprefixer', 'gulp-concat', 'gulp-uglifyjs', 'gulp-notify', 'del', 'gulp-imagemin', 'imagemin-pngquant', 'gulp-if', 'gulp-useref'], {
+
+
       'save-dev': true
     });
     this.bowerInstall(['jquery','sass-font-awesome','normalize.sass','animate.css'], {
