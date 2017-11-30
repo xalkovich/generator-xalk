@@ -19,7 +19,7 @@ gulp.task('build', ['clean', 'img', 'jadebuild'], function () {
 	var buildFonts = gulp.src('app/fonts/**/*')
 		.pipe(gulp.dest('dist/fonts'))
 	var buildFonts = gulp.src('app/js/sass-font-awesome/fonts/*')
-		.pipe(gulp.dest('dist/fonts/FontAwesome/'))
+		.pipe(gulp.dest('dist/fonts/'))
 });
 
 gulp.task('jadebuild', function () {
