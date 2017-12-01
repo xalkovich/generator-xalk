@@ -12,6 +12,7 @@ var gulp = require('gulp'),
 	imagemin = require('gulp-imagemin'),
 	pngquant = require('imagemin-pngquant'),
 	gulpif = require('gulp-if'),
+	wiredep = require('gulp-wiredep'),
 	useref = require('gulp-useref');
 
 
@@ -91,9 +92,21 @@ gulp.task('browser-sync', function () {
 	});
 });
 
+gulp.task('bower', function () {
+	gulp.src('app/index.jade')
+		.pipe(wiredep({
+			diewctory: 'app/js'
+		}))
+		.pipe(gulp.dest('app'))
+		.pipe(browserSync.reload({
+			stream: true
+		}))
+})
+
 gulp.task('default', ['browser-sync', 'jade'], function () {
 	gulp.watch('app/sass/*.sass', ['sass']);
 	gulp.watch('app/*.jade', ['jade']);
 	gulp.watch('app/*.html', browserSync.reload);
 	gulp.watch('app/js/**/*.js', browserSync.reload);
+	gulp.watch('bower.json', [bower]);
 });

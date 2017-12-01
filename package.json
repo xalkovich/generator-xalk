@@ -1,19 +1,14 @@
 {
   "name": "generator-xalk",
-  "version": "0.0.0",
-  "description": "",
-  "homepage": "",
-  "author": {
-    "name": "kirill",
-    "email": "xx@i.ua",
-    "url": ""
-  },
+  "version": "0.0.2",
+  "description": ">",
+  "homepage": "https://github.com/xalkovich/generator-xalk#readme",
+  "author": "kirill <xx@i.ua>",
   "files": [
     "generators"
   ],
   "main": "generators/index.js",
   "keywords": [
-    "",
     "yeoman-generator"
   ],
   "devDependencies": {
@@ -51,6 +46,12 @@
       "node": true
     }
   },
-  "repository": "xalkovich/generator-xalk",
-  "license": "BSD-3-Clause"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xalkovich/generator-xalk.git"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/xalkovich/generator-xalk/issues"
+  }
 }

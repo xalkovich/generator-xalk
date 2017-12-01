@@ -2,11 +2,7 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
-// const mkdirp = require('mkdirp');
 
-// mkdirp.sync('app/images');
-// mkdirp.sync('app/js');
-// mkdirp.sync('dist');
 
 
 module.exports = class extends Generator {
@@ -23,14 +19,7 @@ module.exports = class extends Generator {
 
 
   writing() {
-    // this.fs.copy(
-    //   this.templatePath('main.css'),
-    //   this.destinationPath('app/css/main.css')
-    // );
-    // this.fs.copy(
-    //   this.templatePath('fonts/*'),
-    //   this.destinationPath('app/fonts')
-    // );
+
     this.fs.copy(
       this.templatePath('img/*'),
       this.destinationPath('app/img')
@@ -80,13 +69,14 @@ module.exports = class extends Generator {
   }
 
   installingLodash() {
-    this.npmInstall(['gulp', 'browser-sync', 'gulp-sass', 'gulp-csso', 'gulp-rename', 'bower', 'gulp-jade', 'gulp-jade', 'gulp-autoprefixer', 'gulp-concat', 'gulp-uglifyjs', 'gulp-notify', 'del', 'gulp-imagemin', 'imagemin-pngquant', 'gulp-if', 'gulp-useref'], {
+    this.npmInstall(['gulp', 'browser-sync', 'gulp-sass', 'gulp-csso', 'gulp-rename', 'bower', 'gulp-jade', 'gulp-jade', 'gulp-autoprefixer', 'gulp-concat', 'gulp-uglifyjs', 'gulp-notify', 'del', 'gulp-imagemin', 'imagemin-pngquant', 'gulp-if', 'gulp-useref', 'gulp-wiredep'], {
 
 
       'save-dev': true
     });
-    this.bowerInstall(['jquery','sass-font-awesome','normalize.sass','animate.css'], {
-        'dev': true
+    this.bowerInstall(['jquery', 'xalk-font-awesome', 'normalize.css', 'animate.css'], {
+      'save': true
+
     });
   }
   // installingLodash: function() {
